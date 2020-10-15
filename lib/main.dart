@@ -40,8 +40,10 @@ class Groups extends StatelessWidget {
         child: Container(
           height: 200.0,
           width: 500.0,
-          color: Colors.black,
-          child: Row(),
+          color: Colors.white,
+          child: Row(
+            children: [Text("Group 1")],
+          ),
         ),
       ),
     );
