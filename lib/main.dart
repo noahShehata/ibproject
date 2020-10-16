@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ibproject/group1.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,7 +10,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -36,15 +39,52 @@ class Groups extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.amber,
-      body: Center(
-        child: Container(
-          height: 200.0,
-          width: 500.0,
-          color: Colors.white,
-          child: Row(
-            children: [Text("Group 1")],
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: Center(
+              child: Container(
+                height: 200.0,
+                width: MediaQuery.of(context).size.width / 1.2,
+                color: Colors.white,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    FlatButton(
+                        color: Colors.grey,
+                        onPressed: () {
+                          Get.to(Group1());
+                        },
+                        child: Text("Group 1")),
+                    FlatButton(
+                        color: Colors.grey,
+                        onPressed: () {},
+                        child: Text("Group 2")),
+                    FlatButton(
+                        color: Colors.grey,
+                        onPressed: () {},
+                        child: Text("Group 3")),
+                    FlatButton(
+                        color: Colors.grey,
+                        onPressed: () {
+                          print("Group 4");
+                        },
+                        child: Text("Group 4")),
+                    FlatButton(
+                        color: Colors.grey,
+                        onPressed: () {},
+                        child: Text("Group 5")),
+                    FlatButton(
+                        color: Colors.grey,
+                        onPressed: () {},
+                        child: Text("Group 6"))
+                  ],
+                ),
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
