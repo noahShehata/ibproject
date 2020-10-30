@@ -3,12 +3,12 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class Group1 extends StatefulWidget {
+class Group4 extends StatefulWidget {
   @override
-  _Group1State createState() => _Group1State();
+  _Group4State createState() => _Group4State();
 }
 
-class _Group1State extends State<Group1> {
+class _Group4State extends State<Group4> {
   List images = [];
   Future<List> getImages() async {
     var response =
@@ -39,20 +39,20 @@ class _Group1State extends State<Group1> {
           FutureBuilder(
               future: getImages(),
               builder: (context, snapshot) {
-                return Flexible(
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: snapshot.data.length,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        width: 100.0,
-                        padding: EdgeInsets.only(left: 100.0, right: 100.0),
-                        child: Image(
-                          fit: BoxFit.fitWidth,
-                          image: NetworkImage(snapshot.data[index]),
-                        ),
-                      );
-                    },
+                return Center(
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height / 1.1,
+                    width: MediaQuery.of(context).size.width / 1.5,
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: snapshot.data.length,
+                      itemBuilder: (context, index) {
+                        return Image.network(
+                          snapshot.data[index],
+                          scale: 0.2,
+                        );
+                      },
+                    ),
                   ),
                 );
               })

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ibproject/group1.dart';
+import 'package:ibproject/group4.dart';
 
 void main() {
   runApp(MyApp());
@@ -54,7 +54,7 @@ class Groups extends StatelessWidget {
                     FlatButton(
                         color: Colors.grey,
                         onPressed: () {
-                          Get.to(Group1());
+                          Get.to(Group4());
                         },
                         child: Text("Group 1")),
                     FlatButton(
