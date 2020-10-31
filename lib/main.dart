@@ -29,61 +29,190 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Groups(),
+      home: HomePage(),
     );
   }
 }
 
-class Groups extends StatelessWidget {
+class HomePage extends StatelessWidget {
+  final String purpose =
+      "As a former student of the International Baccalaureate (IB) program, I understand the rigorousness of the program’s courses and the importance of recieving help from fellow IB students. With this understanding, I wish to create a network of IB students that mutually share resources such as notes, past papers, and personally completed Internal Assessments.";
+  final String contactme =
+      "Contact Me:\n(813)373-8879\nbvbfootballer@gmail.com";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
-      body: Column(
+      backgroundColor: Colors.white,
+      body: Row(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: Center(
-              child: Container(
-                height: 200.0,
-                width: MediaQuery.of(context).size.width / 1.2,
-                color: Colors.white,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    FlatButton(
-                        color: Colors.grey,
-                        onPressed: () {
-                          Get.to(Group4());
-                        },
-                        child: Text("Group 1")),
-                    FlatButton(
-                        color: Colors.grey,
-                        onPressed: () {},
-                        child: Text("Group 2")),
-                    FlatButton(
-                        color: Colors.grey,
-                        onPressed: () {},
-                        child: Text("Group 3")),
-                    FlatButton(
-                        color: Colors.grey,
-                        onPressed: () {
-                          print("Group 4");
-                        },
-                        child: Text("Group 4")),
-                    FlatButton(
-                        color: Colors.grey,
-                        onPressed: () {},
-                        child: Text("Group 5")),
-                    FlatButton(
-                        color: Colors.grey,
-                        onPressed: () {},
-                        child: Text("Group 6"))
-                  ],
-                ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 25.0),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(width: 50.0),
+                  Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: Colors.grey),
+                      child: Image(image: AssetImage("logo.png")),
+                      width: 150.0,
+                      height: 150.0),
+                  SizedBox(width: 70.0),
+                  Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        color: Colors.grey),
+                    width: 900.0,
+                    height: 150.0,
+                    child: Center(
+                      child: Text(
+                        "ourIB Resources",
+                        style: TextStyle(fontSize: 70.0),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(height: 50.0),
+              Row(
+                children: [
+                  SizedBox(width: 50.0),
+                  Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: Colors.grey),
+                      width: 750,
+                      height: 350,
+                      child: Column(
+                        children: [
+                          Text(
+                            "Updates",
+                            style: TextStyle(fontSize: 30),
+                          )
+                        ],
+                      )),
+                  Image(
+                    image: AssetImage("design.png"),
+                    width: 700.0,
+                    height: 350.0,
+                    fit: BoxFit.contain,
+                  )
+                ],
+              ),
+              SizedBox(height: 50.0),
+              Row(
+                children: [
+                  SizedBox(width: 50.0),
+                  Image(
+                    image: AssetImage("design.png"),
+                    width: 700.0,
+                    height: 350.0,
+                    fit: BoxFit.contain,
+                  ),
+                  Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.0),
+                          color: Colors.grey),
+                      width: 750,
+                      height: 300,
+                      child: Column(
+                        children: [
+                          Text(
+                            "Purpose",
+                            style: TextStyle(fontSize: 30),
+                          ),
+                          Center(
+                            child: Text(
+                              purpose,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 25.0),
+                            ),
+                          )
+                        ],
+                      )),
+                ],
+              ),
+              Row(
+                children: [
+                  SizedBox(width: 50.0),
+                  Container(
+                    height: 75.0,
+                    width: 700.0,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        color: Colors.grey),
+                    child: Center(
+                        child: Text(contactme, textAlign: TextAlign.center)),
+                  )
+                ],
+              ),
+            ],
+          ),
+          Expanded(
+            child: Container(
+              margin: EdgeInsets.only(top: 25.0, bottom: 25.0, left: 50.0),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10.0),
+                      bottomLeft: Radius.circular(10.0)),
+                  color: Colors.grey),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  TextButton(
+                      onPressed: () {
+                        Get.to(Group4());
+                      },
+                      child: Text(
+                        "Group 1:\nLanguage and Literature",
+                        style: TextStyle(fontSize: 40.0, color: Colors.black),
+                        textAlign: TextAlign.center,
+                      )),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Group 2:\nLanguage Acquisition",
+                        style: TextStyle(fontSize: 40.0, color: Colors.black),
+                        textAlign: TextAlign.center,
+                      )),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Group 3:\nIndividuals and Socities",
+                        style: TextStyle(fontSize: 40.0, color: Colors.black),
+                        textAlign: TextAlign.center,
+                      )),
+                  TextButton(
+                      onPressed: () {
+                        print("Group 4");
+                      },
+                      child: Text(
+                        "Group 4:\nThe Sciences",
+                        style: TextStyle(fontSize: 40.0, color: Colors.black),
+                        textAlign: TextAlign.center,
+                      )),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Group 5:\nMathematics",
+                        style: TextStyle(fontSize: 40.0, color: Colors.black),
+                        textAlign: TextAlign.center,
+                      )),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Group 6:\nThe Arts",
+                        style: TextStyle(fontSize: 40.0, color: Colors.black),
+                        textAlign: TextAlign.center,
+                      ))
+                ],
               ),
             ),
-          ),
+          )
         ],
       ),
     );
