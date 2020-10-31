@@ -91,7 +91,8 @@ class HomePage extends StatelessWidget {
                         children: [
                           Text(
                             "Updates",
-                            style: TextStyle(fontSize: 30),
+                            style: TextStyle(
+                                fontSize: 30, fontWeight: FontWeight.bold),
                           )
                         ],
                       )),
@@ -123,13 +124,17 @@ class HomePage extends StatelessWidget {
                         children: [
                           Text(
                             "Purpose",
-                            style: TextStyle(fontSize: 30),
+                            style: TextStyle(
+                                fontSize: 30, fontWeight: FontWeight.bold),
                           ),
                           Center(
-                            child: Text(
-                              purpose,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(fontSize: 25.0),
+                            child: Padding(
+                              padding: const EdgeInsets.all(15.0),
+                              child: Text(
+                                purpose,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(fontSize: 25.0),
+                              ),
                             ),
                           )
                         ],
@@ -146,7 +151,11 @@ class HomePage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10.0),
                         color: Colors.grey),
                     child: Center(
-                        child: Text(contactme, textAlign: TextAlign.center)),
+                        child: Text(
+                      contactme,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    )),
                   )
                 ],
               ),
