@@ -49,29 +49,30 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 25.0),
+              SizedBox(height: MediaQuery.of(context).size.height / 25),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(width: 50.0),
+                  SizedBox(width: 50),
                   Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.0),
                           color: Colors.grey),
                       child: Image(image: AssetImage("logo.png")),
-                      width: 150.0,
-                      height: 150.0),
+                      width: MediaQuery.of(context).size.width / 15,
+                      height: MediaQuery.of(context).size.height / 8),
                   SizedBox(width: 70.0),
                   Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.0),
                         color: Colors.grey),
-                    width: 900.0,
-                    height: 150.0,
+                    width: MediaQuery.of(context).size.width / 2,
+                    height: MediaQuery.of(context).size.height / 8,
                     child: Center(
                       child: Text(
                         "ourIB Resources",
-                        style: TextStyle(fontSize: 70.0),
+                        style: TextStyle(
+                            fontSize: MediaQuery.of(context).size.height / 15),
                       ),
                     ),
                   )
@@ -85,7 +86,7 @@ class HomePage extends StatelessWidget {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.0),
                           color: Colors.grey),
-                      width: 750,
+                      width: MediaQuery.of(context).size.width / 3,
                       height: 350,
                       child: Column(
                         children: [
@@ -98,8 +99,8 @@ class HomePage extends StatelessWidget {
                       )),
                   Image(
                     image: AssetImage("design.png"),
-                    width: 700.0,
-                    height: 350.0,
+                    width: MediaQuery.of(context).size.width / 3,
+                    height: MediaQuery.of(context).size.height / 3.5,
                     fit: BoxFit.contain,
                   )
                 ],
@@ -110,8 +111,8 @@ class HomePage extends StatelessWidget {
                   SizedBox(width: 50.0),
                   Image(
                     image: AssetImage("design.png"),
-                    width: 700.0,
-                    height: 350.0,
+                    width: MediaQuery.of(context).size.width / 3,
+                    height: MediaQuery.of(context).size.height / 3.5,
                     fit: BoxFit.contain,
                   ),
                   Container(
